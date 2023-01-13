@@ -1,13 +1,13 @@
 import express from "express";
-import { ProductController } from "../controller/product.controller";
+import Container from "typedi";
+import ProductController from "../controller/product.controller";
 
 class Product {
   public router: express.Router = express.Router();
-  public productController: ProductController;
+  public readonly productController: ProductController;
 
   constructor() {
-    this.productController = new ProductController();
-
+    this.productController = Container.get(ProductController);
     this.assign();
   }
 

@@ -1,6 +1,5 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import { config as dotenvConfig } from "dotenv";
-import path from "path";
 import { Product } from "../entity/product.model";
 
 dotenvConfig();
@@ -13,7 +12,6 @@ const dataSourceOptions: DataSourceOptions = {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   entities: [Product],
-  // entities: [path.resolve(`${__dirname}/model/*.{js,ts}`)],
   synchronize: true,
   logging: true,
   migrationsTableName: "migrations",

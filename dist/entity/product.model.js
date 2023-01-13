@@ -14,13 +14,9 @@ const typeorm_1 = require("typeorm");
 let Product = class Product {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
     __metadata("design:type", String)
 ], Product.prototype, "id", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Product.prototype, "product_id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
@@ -50,6 +46,6 @@ __decorate([
     __metadata("design:type", Date)
 ], Product.prototype, "updatedAt", void 0);
 Product = __decorate([
-    (0, typeorm_1.Entity)("product")
+    (0, typeorm_1.Entity)("products")
 ], Product);
 exports.Product = Product;

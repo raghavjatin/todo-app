@@ -1,6 +1,8 @@
+import { Service } from "typedi";
 import { AppDataSource } from "../connection/connection";
 import { Product } from "../entity/product.model";
 
+@Service()
 export class ProductService {
   // fetch all product details
   public findProduct = async () => {
@@ -29,7 +31,7 @@ export class ProductService {
   };
 
   // update product
-  public updateProduct = async (product: Product, product_id: number) => {
+  public updateProduct = async (product: Product, product_id: string) => {
     const productRepository = AppDataSource.getRepository(Product);
 
     const productDetails = await productRepository

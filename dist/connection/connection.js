@@ -13,7 +13,6 @@ const dataSourceOptions = {
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
     entities: [product_model_1.Product],
-    // entities: [path.resolve(`${__dirname}/model/*.{js,ts}`)],
     synchronize: true,
     logging: true,
     migrationsTableName: "migrations",
